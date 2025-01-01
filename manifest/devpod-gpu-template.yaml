@@ -15,4 +15,9 @@ spec:
     - sh
     - -c
     - mkdir -p /tmp
+    resources:
+      requests:
+        nvidia.com/gpu: 1
+      limits:
+        nvidia.com/gpu: 1
   runtimeClassName: nvidia
