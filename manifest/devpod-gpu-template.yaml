@@ -7,17 +7,4 @@ metadata:
   labels:
     devpod/template: "allenporter-gpu"
 spec:
-  # Workaround for https://github.com/loft-sh/devpod/issues/805
-  initContainers:
-  - name: init-myservice
-    image: busybox:1.28
-    command:
-    - sh
-    - -c
-    - mkdir -p /tmp
-    resources:
-      requests:
-        nvidia.com/gpu: 1
-      limits:
-        nvidia.com/gpu: 1
   runtimeClassName: nvidia
